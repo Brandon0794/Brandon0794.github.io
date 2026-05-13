@@ -6,269 +6,409 @@
     <title>Brandon Coronado | Portfolio</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-        }
-
-        header {
-            background: #111827;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 20px;
-            color: #94a3b8;
-        }
-
-        section {
-            padding: 50px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        h2 {
-            color: #38bdf8;
-        }
-
-        .card {
-            background: #1e293b;
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 20px;
-        }
-
-        ul li {
-            margin-bottom: 10px;
+            background: #ffffff;
+            color: #1e293b;
+            line-height: 1.6;
         }
 
         a {
-            color: #38bdf8;
+            color: #0284c7;
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .page {
+            max-width: 1200px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        header {
+            display: grid;
+            grid-template-columns: 1.4fr 0.6fr;
+            gap: 30px;
+            align-items: center;
+            background: #f8fafc;
+            border-radius: 28px;
+            padding: 45px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .hero-text h1 {
+            font-size: 44px;
+            margin: 0 0 10px;
+            color: #0f172a;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: #475569;
+            margin: 0 0 20px;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .profile-photo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-photo img {
+            width: 240px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #ffffff;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+            background: #e2e8f0;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #0f172a;
+            font-size: 28px;
+            margin: 0 0 18px;
+        }
+
+        .panel {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        .horizontal-panels {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .panel h3,
+        .project-card h3 {
+            margin-top: 0;
+            color: #0369a1;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            background: #f8fafc;
+            padding: 24px;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card ul {
+            padding-left: 20px;
+        }
+
+        .project-card li,
+        .panel li {
+            margin-bottom: 8px;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 15px;
+            background: #0284c7;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .project-link:hover {
+            background: #0369a1;
+            text-decoration: none;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .contact-item {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 18px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #0f172a;
+            margin-bottom: 6px;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            color: #94a3b8;
+            padding: 25px;
+            color: #64748b;
+        }
+
+        @media (max-width: 950px) {
+            header,
+            .horizontal-panels,
+            .projects-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                text-align: center;
+            }
+
+            .badge-row {
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 34px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <div class="page">
+        <header>
+            <div class="hero-text">
+                <h1>Brandon Andrey Coronado Herrera</h1>
+                <p>Business Informatics Graduate | Junior Developer | Technical Support | Technology Enthusiast</p>
 
-    <header>
-        <h1>Brandon Andrey Coronado Herrera</h1>
-        <p>Business Informatics Graduate | Junior Developer |Technical Support| Technology Enthusiast</p>
-    </header>
+                <p>
+                    Recent Business Informatics graduate seeking a first professional opportunity
+                    in the technology industry. Motivated to learn, adapt to new technologies,
+                    solve problems, and grow in a dynamic corporate environment.
+                </p>
 
-    <section>
-        <h2>About Me</h2>
+                <div class="badge-row">
+                    <span class="badge">Junior Developer</span>
+                    <span class="badge">Technical Support</span>
+                    <span class="badge">Power BI</span>
+                    <span class="badge">.NET</span>
+                    <span class="badge">SQL</span>
+                </div>
+            </div>
 
-        <div class="card">
-            <p>
-                I am a recent graduate with a Bachelor’s Degree in Business Informatics,
-                currently seeking my first professional opportunity in the technology industry.
-                I am highly motivated to continue learning, adapting to new technologies,
-                and growing both personally and professionally.
-            </p>
+            <div class="profile-photo">
+                <!-- Replace "my-photo.jpg" with your real photo file name -->
+                <img src="my-photo.jpg" alt="Photo of Brandon Coronado">
+            </div>
+        </header>
 
-            <p>
-                I enjoy teamwork, problem-solving, and collaborating with modern tools
-                and AI-driven solutions. My goal is to become part of a dynamic corporate
-                environment where I can contribute, develop my skills, and build a successful career.
-            </p>
-        </div>
-    </section>
-<section>
-    <h2>Projects</h2>
-    <div class="card">
-    <h3>Pokédex React App</h3>
+        <section>
+            <div class="horizontal-panels">
+                <div class="panel">
+                    <h3>About Me</h3>
+                    <p>
+                        I enjoy teamwork, problem-solving, and collaborating with modern tools
+                        and AI-driven solutions. My goal is to contribute to a company while
+                        developing my technical and professional skills.
+                    </p>
+                </div>
 
-    <p>
-        Interactive web application developed with React that consumes
-        the public PokéAPI to search and display detailed Pokémon
-        information in real time through a responsive and dynamic interface.
-    </p>
+                <div class="panel">
+                    <h3>Education</h3>
+                    <ul>
+                        <li>Bachelor’s Degree in Business Informatics – University of Costa Rica</li>
+                        <li>Computer Equipment Operator – INA</li>
+                        <li>Intermediate English</li>
+                    </ul>
+                </div>
 
-    <p>
-        The application allows users to search Pokémon by name with
-        autocomplete suggestions while typing, improving the overall
-        user experience and navigation flow.
-    </p>
+                <div class="panel">
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li>Customer Service Certificate – INA</li>
+                        <li>General Basic Education Completion Certificate</li>
+                        <li>Computer Equipment Operator – INA</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <p>
-        Features included in the application:
-    </p>
+        <section>
+            <h2>Projects</h2>
 
-    <ul>
-        <li>Dynamic Pokémon search by name</li>
-        <li>Autocomplete suggestions in real time</li>
-        <li>Display of Pokémon image, ID, height, and weight</li>
-        <li>Conversion of API data into real-world units (meters and kilograms)</li>
-        <li>Error handling for invalid searches</li>
-        <li>Loading indicators during API requests</li>
-        <li>Responsive design optimized for mobile devices</li>
-    </ul>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div>
+                        <h3>Pokédex React App</h3>
+                        <p>
+                            Interactive web application developed with React that consumes the public
+                            PokéAPI to search and display detailed Pokémon information in real time.
+                        </p>
 
-    <p>
-        <strong>Technologies Used:</strong><br>
-        React, Vite, Tailwind CSS, JavaScript, REST API, PokeAPI
-    </p>
+                        <ul>
+                            <li>Dynamic Pokémon search by name</li>
+                            <li>Autocomplete suggestions</li>
+                            <li>Image, ID, height, and weight display</li>
+                            <li>Error handling and loading indicators</li>
+                            <li>Responsive mobile design</li>
+                        </ul>
 
-    <a href="https://brandon0794.github.io/pokedex-react/"
-       target="_blank">
-       View Project
-    </a>
-</div>
+                        <p><strong>Technologies:</strong><br>React, Vite, Tailwind CSS, JavaScript, REST API, PokeAPI</p>
+                    </div>
 
-    
-    <div class="card">
-        <h3>Mexican Restaurant Website - Donde Wes D&W</h3>
+                    <a class="project-link" href="https://brandon0794.github.io/pokedex-react/" target="_blank">View Project</a>
+                </div>
 
-        <p>
-            Responsive restaurant website developed using HTML5 and Bootstrap 5.
-            The project features interactive navigation, food menu sections,
-            image galleries, embedded multimedia content, and a modern
-            user-friendly interface optimized for different devices.
-        </p>
+                <div class="project-card">
+                    <div>
+                        <h3>Mexican Restaurant Website - Donde Wes D&W</h3>
+                        <p>
+                            Responsive restaurant website developed using HTML5 and Bootstrap 5,
+                            including navigation, menu sections, image galleries, and multimedia content.
+                        </p>
 
-        <p>
-            This project was focused on improving responsive web design skills,
-            front-end development, and user experience optimization.
-        </p>
+                        <ul>
+                            <li>Responsive design</li>
+                            <li>Modern restaurant layout</li>
+                            <li>Food menu sections</li>
+                            <li>Image gallery</li>
+                            <li>GitHub Pages deployment</li>
+                        </ul>
 
-        <p>
-            <strong>Technologies Used:</strong><br>
-            HTML5, CSS3, Bootstrap 5, Responsive Design, GitHub Pages
-        </p>
+                        <p><strong>Technologies:</strong><br>HTML5, CSS3, Bootstrap 5, Responsive Design, GitHub Pages</p>
+                    </div>
 
-        <a href="https://brandon0794.github.io/DondeWes/"
-           target="_blank">
-           View Project
-        </a>
+                    <a class="project-link" href="https://brandon0794.github.io/DondeWes/" target="_blank">View Project</a>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <h3>Cash Register Management System - Bar La Deportiva</h3>
+                        <p>
+                            Desktop cash register management system developed in C# using .NET,
+                            SQLite, and Entity Framework Core for daily sales operations.
+                        </p>
+
+                        <ul>
+                            <li>Daily sales registration</li>
+                            <li>Cash/card payment classification</li>
+                            <li>Sales validations</li>
+                            <li>Daily summaries</li>
+                            <li>End-of-day closing reports</li>
+                        </ul>
+
+                        <p><strong>Technologies:</strong><br>C#, .NET, Entity Framework Core, SQLite, OOP, Layered Architecture</p>
+                    </div>
+
+                    <a class="project-link" href="https://github.com/Brandon0794/BarLaDeportiva.git" target="_blank">View Repository</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+
+            <div class="horizontal-panels">
+                <div class="panel">
+                    <h3>Development</h3>
+                    <ul>
+                        <li>.NET</li>
+                        <li>Java</li>
+                        <li>SQL</li>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>Bootstrap 5</li>
+                    </ul>
+                </div>
+
+                <div class="panel">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li>Microsoft Excel</li>
+                        <li>Power BI</li>
+                        <li>Visual Studio</li>
+                        <li>GitHub Pages</li>
+                        <li>AI-assisted workflows</li>
+                    </ul>
+                </div>
+
+                <div class="panel">
+                    <h3>Professional Skills</h3>
+                    <ul>
+                        <li>Scrum Methodology</li>
+                        <li>Fast adaptation to new technologies</li>
+                        <li>Teamwork and communication</li>
+                        <li>Problem-solving</li>
+                        <li>Customer service</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+
+            <div class="panel">
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <strong>Email</strong>
+                        <span>Brandonch0794@gmail.com</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Phone</strong>
+                        <span>+506 6393-4334</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Location</strong>
+                        <span>Santa Rosa, Poás, Alajuela, Costa Rica</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>LinkedIn</strong>
+                        <a href="https://www.linkedin.com/in/brandon-herrera-767a01221" target="_blank">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            © 2026 Brandon Coronado Herrera
+        </footer>
     </div>
-    <div class="card">
-    <h3>Cash Register Management System - Bar La Deportiva</h3>
-
-    <p>
-        Desktop-based cash register management system developed in C#
-        using .NET, SQLite, and Entity Framework Core.
-        The application was designed to manage daily sales operations
-        for a sports bar environment through a modular and scalable architecture.
-    </p>
-
-    <p>
-        The system allows users to register sales, classify payments
-        by cash or card, validate transaction data, generate daily summaries,
-        and calculate end-of-day closing reports.
-        The project was developed following software engineering principles,
-        including layered architecture, separation of concerns,
-        and object-oriented programming practices.
-    </p>
-
-    <p>
-        The application structure separates responsibilities into:
-    </p>
-
-    <ul>
-        <li><strong>Models:</strong> Sales entity management</li>
-        <li><strong>Data:</strong> SQLite database connection and persistence</li>
-        <li><strong>Services:</strong> Business logic, validations, queries, and closing operations</li>
-        <li><strong>Program.cs:</strong> Main menu and user interaction flow</li>
-    </ul>
-
-    <p>
-        Features included in the system:
-    </p>
-
-    <ul>
-        <li>Daily sales registration</li>
-        <li>Payment method classification (Cash/Card)</li>
-        <li>Sales validations and error handling</li>
-        <li>Daily sales queries and summaries</li>
-        <li>Automatic total calculations</li>
-        <li>End-of-day closing generation</li>
-        <li>SQLite database persistence</li>
-    </ul>
-
-    <p>
-        <strong>Technologies Used:</strong><br>
-        C#, .NET, Entity Framework Core, SQLite,
-        Object-Oriented Programming (OOP),
-        Layered Architecture, Visual Studio
-    </p>
-
-    <a href="https://github.com/Brandon0794/BarLaDeportiva.git"
-       target="_blank">
-       View Repository
-    </a>
-</div>
-</section>
-
-    <section>
-        <h2>Technical Skills</h2>
-
-        <div class="card">
-            <ul>
-                <li>Microsoft Excel</li>
-                <li>Power BI</li>
-                <li>.NET</li>
-                <li>Java</li>
-                <li>SQL</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Bootstrap 5</li>
-                <li>JavaScript</li>
-                <li>Scrum Methodology</li>
-                <li>AI-assisted workflows</li>
-                <li>Fast adaptation to new technologies</li>
-                <li>Teamwork and communication</li>
-                
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>Education & Certifications</h2>
-
-        <div class="card">
-            <ul>
-                <li>Bachelor’s Degree in Business Informatics – University of Costa Rica</li>
-                <li>Computer Equipment Operator – INA</li>
-                <li>Customer Service Certificate – INA</li>
-                <li>General Basic Education Completion Certificate</li>
-                <li>Intermediate English</li>
-            </ul>
-        </div>
-    </section>
-    <section>
-        <h2>Contact</h2>
-
-        <div class="card">
-            <p>Email: Brandonch0794@gmail.com</p>
-            <p>Phone: +506 6393-4334</p>
-            <p>Location: Santa Rosa, Poás, Alajuela, Costa Rica</p>
-            <p>
-                LinkedIn:
-                <a href="https://www.linkedin.com/in/brandon-herrera-767a01221" target="_blank">
-                    linkedin.com/in/brandon-herrera-767a01221
-                </a>
-            </p>
-        </div>
-    </section>
-
-    <footer>
-        © 2026 Brandon Coronado Herrera
-    </footer>
-
 </body>
 </html>
